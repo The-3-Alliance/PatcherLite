@@ -3,7 +3,6 @@ package club.sk1er.patcher;
 import club.sk1er.patcher.asm.render.screen.GuiChatTransformer;
 import club.sk1er.patcher.commands.*;
 import club.sk1er.patcher.config.PatcherConfig;
-import club.sk1er.patcher.config.PatcherSoundConfig;
 import club.sk1er.patcher.ducks.FontRendererExt;
 import club.sk1er.patcher.hooks.EntityRendererHook;
 import club.sk1er.patcher.hooks.MinecraftHook;
@@ -130,10 +129,7 @@ public class Patcher {
         resourceManager.registerReloadListener(new ReloadListener());
 
         registerCommands(
-            new PatcherCommand(), new PatcherSoundsCommand(), new InventoryScaleCommand(),
-            new AsyncScreenshots.FavoriteScreenshot(), new AsyncScreenshots.DeleteScreenshot(),
-            new AsyncScreenshots.UploadScreenshot(), new AsyncScreenshots.CopyScreenshot(),
-            new AsyncScreenshots.ScreenshotsFolder()
+            new PatcherCommand(), new InventoryScaleCommand()
         );
         EssentialAPI.getCommandRegistry().registerParser(PatcherPlayer.class, new PatcherPlayerArgumentParser());
 
